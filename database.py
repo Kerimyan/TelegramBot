@@ -13,20 +13,18 @@ class Database:
         self.curs.execute(query)
         self.conn.commit()
 
-    def insert_in_table(self, car_mark, car_model, car_year, car_price,url):
-        query = Query.insert_query.format(car_mark, car_model, car_year, car_price,url)
+    def insert_in_table(self, car_mark, car_model, car_year, car_price, url):
+        query = Query.insert_query.format(car_mark, car_model, car_year, car_price, url)
         self.curs.execute(query)
         self.conn.commit()
 
+    def search_value(self, search_tool, search_term):
+        query = Query.search_query.format(search_tool, search_term)
+        self.curs.execute(query)
+        return self.curs.fetchall()
+
     def close(self):
         self.conn.close()
-
-
-
-
-
-
-
 
 
 

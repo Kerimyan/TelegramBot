@@ -8,4 +8,4 @@ class Query:
                          "url varchar(30));"
     insert_query = "INSERT INTO cars (car_mark, car_model, car_year, car_price,url) values ('{}', '{}', '{}', '{}','{}');"
 
-
+    search_query = "SELECT * FROM cars WHERE {} LIKE '%{}%' "
