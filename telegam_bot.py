@@ -38,7 +38,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('test.db')
+                db = Database('cars.db')
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
@@ -56,7 +56,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('test.db')
+                db = Database('cars.db')
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
@@ -74,7 +74,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('test.db')
+                db = Database('cars.db')
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
@@ -92,7 +92,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('test.db')
+                db = Database('cars.db')
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
