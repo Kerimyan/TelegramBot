@@ -94,7 +94,7 @@ class CarFinderBot:
             def handle_user_input(message):
                 search_query = message.text
                 db = Database(self.filename)
-                results = db.search_value(self.search_tool, search_query)
+                results = db.search_value_via_price(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
                 else:

@@ -23,6 +23,11 @@ class Database:
         self.curs.execute(query)
         return self.curs.fetchall()
 
+    def search_value_via_price(self, search_tool, search_term):
+        query = Query.search_query_for_price.format(search_tool, search_term)
+        self.curs.execute(query)
+        return self.curs.fetchall()
+
     def close(self):
         self.conn.close()
 

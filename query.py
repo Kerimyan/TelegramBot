@@ -9,3 +9,5 @@ class Query:
     insert_query = "INSERT INTO cars (car_mark, car_model, car_year, car_price,url) values ('{}', '{}', '{}', '{}','{}');"
 
     search_query = "SELECT * FROM cars WHERE {} LIKE '%{}%' "
+
+    search_query_for_price = "SELECT * FROM cars WHERE {} LIKE '{}' "
