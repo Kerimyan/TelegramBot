@@ -6,7 +6,8 @@ from database import Database
 
 
 class CarFinderBot:
-    def __init__(self, token):
+    def __init__(self, token, filename):
+        self.filename = filename
         self.bot = telebot.TeleBot(token)
 
     def start(self):
@@ -38,7 +39,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('cars.db')
+                db = Database(self.filename)
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
@@ -56,7 +57,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('cars.db')
+                db = Database(self.filename)
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
@@ -74,7 +75,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('cars.db')
+                db = Database(self.filename)
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")
@@ -92,7 +93,7 @@ class CarFinderBot:
             @self.bot.message_handler(func=lambda m: True)
             def handle_user_input(message):
                 search_query = message.text
-                db = Database('cars.db')
+                db = Database(self.filename)
                 results = db.search_value(self.search_tool, search_query)
                 if results == []:
                     self.bot.reply_to(message, "No result!!!Try again...")

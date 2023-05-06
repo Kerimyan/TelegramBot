@@ -12,6 +12,6 @@ if not os.path.exists(filename):
         sender.response_receiver(url)
 else:
     API_KEY = os.getenv('API_KEY')
-    bot = CarFinderBot(API_KEY)
+    bot = CarFinderBot(API_KEY, filename)
     print('Bot is working now!!!')
     bot.start()
