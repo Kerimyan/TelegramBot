@@ -28,8 +28,6 @@ class Database:
         self.curs.execute(query)
         return self.curs.fetchall()
 
-    def close(self):
-        self.conn.close()
 
 
 
